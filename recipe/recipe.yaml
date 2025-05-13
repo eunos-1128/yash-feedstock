@@ -1,6 +1,6 @@
 context:
   name: Yash
-  version: 2.58.1
+  version: "2.59"
   author: magicant
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/${{ author }}/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 0255c0cad475b88ad32f4247837e77b5a4999e41c268f08107c094a16eb57f53
+  sha256: efe9d299a14d103d259b8a709fa2b664d8ff6ee498523f797f31f67db62e11af
 
 build:
   number: 0
@@ -31,7 +31,7 @@ requirements:
 
 tests:
   - script:
-    - test "$(yash -c 'echo Hello, Yash')" = "Hello, Yash"
+      - test "$(yash -c 'echo Hello, Yash')" = "Hello, Yash"
 
 about:
   homepage: https://magicant.github.io/yash

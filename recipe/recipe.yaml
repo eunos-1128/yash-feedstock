@@ -16,7 +16,7 @@ build:
   skip:
     - win
   script:
-    - ./configure --prefix="${{ PREFIX }}" --host=${CONDA_TOOLCHAIN_HOST}
+    - ./configure --prefix="${{ PREFIX }}"
     - make install-binary -j${{ CPU_COUNT }}
 
 requirements:

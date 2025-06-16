@@ -21,9 +21,8 @@ build:
 
 requirements:
   build:
-    - ${{ compiler('c') }}
-    - ${{ stdlib('c') }}
-    - ${{ cdt('macosx-sdk') }}
+    - ${{ compiler("c") }}
+    - ${{ stdlib("c") }}
     - make
   host:
     - if: osx

@@ -15,9 +15,6 @@ build:
   number: 0
   skip:
     - win
-  script:
-    - ./configure --prefix=${{ PREFIX }}
-    - make install-binary -j${{ CPU_COUNT }}
 
 requirements:
   build:

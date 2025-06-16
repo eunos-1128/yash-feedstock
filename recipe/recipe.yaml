@@ -20,14 +20,15 @@ requirements:
   build:
     - ${{ compiler("c") }}
     - ${{ stdlib("c") }}
-    - if: build_platform != target_platform
-      then: libintl-devel
     - make
     - pkg-config
   host:
     - if: osx
       then: libintl-devel
+    - if: osx and arm64
+      then: gettext
     - ncurses
+    - pkg-config
 
 tests:
   - script:

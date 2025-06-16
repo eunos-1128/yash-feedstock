@@ -24,7 +24,7 @@ requirements:
   host:
     - if: osx
       then: libintl-devel
-    - if: osx and arm64
+    - if: target_platform == "osx-arm64"
       then: gettext
     - ncurses
 

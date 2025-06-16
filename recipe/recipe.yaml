@@ -22,11 +22,11 @@ requirements:
     - ${{ stdlib("c") }}
     - make
     - pkg-config
+    - if: build_platform != target_platform
+      then: gettext
   host:
     - if: osx
       then: libintl-devel
-    - if: target_platform == osx-arm64
-      then: gettext
     - ncurses
 
 tests:

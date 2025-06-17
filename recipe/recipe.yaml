@@ -23,10 +23,8 @@ requirements:
     - asciidoc
     - docbook-xsl
     - libxslt
-    - libxml2
     - make
     - pkg-config
-    - python >=2,<3
   host:
     - if: osx
       then: libintl-devel

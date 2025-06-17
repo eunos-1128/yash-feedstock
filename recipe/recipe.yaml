@@ -21,12 +21,10 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
     - gettext
-    - if: osx and arm64
-      then: libintl-devel
     - make
     - pkg-config
   host:
-    - if: linux
+    - if: linux or (osx and arm64)
       then: gettext
     - if: osx
       then: libintl-devel

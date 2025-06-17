@@ -15,6 +15,8 @@ done
 
 pushd po
 msginit --no-translator -l en@boldquot -i yash.pot -o en@boldquot.po
+sed -i 's/charset=ASCII/charset=UTF-8/' en@boldquot.po
+make
 popd
 
 ./configure --prefix=${PREFIX}

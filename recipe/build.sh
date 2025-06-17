@@ -6,5 +6,10 @@ if [[ "${target_platform}" == "osx-"* ]]; then
     export CC=$(command -v clang)
 fi
 
-./configure --prefix=${PREFIX}
+if [[ "${target_platform}" == "osx-arm64" ]]; then
+    ./configure --prefix=${PREFIX} --disable-nls
+else
+    ./configure --prefix=${PREFIX}
+fi
+
 make install-binary -j${CPU_COUNT}

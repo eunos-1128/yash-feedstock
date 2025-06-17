@@ -24,11 +24,11 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
     - gettext
+    - if: osx
+      then: libintl-devel
     - make
     - pkg-config
   host:
-    - if: osx
-      then: libintl-devel
     - ncurses
 
 tests:

@@ -26,6 +26,8 @@ requirements:
   host:
     - if: linux
       then: gettext
+    - if: osx and arm64
+      then: libiconv
     - if: osx
       then: libintl-devel
     - ncurses

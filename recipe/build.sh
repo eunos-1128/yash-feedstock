@@ -1,6 +1,6 @@
   #!/bin/bash
 
-export PKG_CONFIG_PATH="${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}"
+export PKG_CONFIG_PATH="${BUILD_PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}"
 export CFLAGS="-I${PREFIX}/include ${CFLAGS}"
 export LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
 

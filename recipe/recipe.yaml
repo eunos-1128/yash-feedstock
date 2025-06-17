@@ -28,7 +28,6 @@ requirements:
     - if: osx and arm64
       then: gettext
     - ncurses
-    - pkg-config
 
 tests:
   - script:

@@ -24,7 +24,7 @@ requirements:
     - make
     - pkg-config
   host:
-    - if: linux or (osx and arm64)
+    - if: linux
       then: gettext
     - if: osx
       then: libintl-devel

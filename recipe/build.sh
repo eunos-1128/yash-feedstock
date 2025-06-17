@@ -13,6 +13,10 @@ for f in "${BUILD_PREFIX}/lib/python2.7"/_sysconfigdata_*_conda*_linux_gnu.py; d
     break
 done
 
+pushd po
+msginit --no-translator -l en@boldquot -i yash.pot -o en@boldquot.po
+popd
+
 ./configure --prefix=${PREFIX}
 make -j${CPU_COUNT}
 make install

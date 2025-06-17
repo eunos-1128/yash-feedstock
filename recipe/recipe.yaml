@@ -22,6 +22,7 @@ requirements:
     - ${{ stdlib("c") }}
     - asciidoc
     - docbook-xsl
+    - gettext
     - libxslt
     - make
     - pkg-config

@@ -16,7 +16,7 @@ build:
   skip:
     - win
   script:
-    - ./configure --prefix="${{ PREFIX }}"
+    - ./configure --prefix=${{ PREFIX }}
     - make install-binary -j${{ CPU_COUNT }}
 
 requirements:
@@ -24,11 +24,11 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
     - gettext
-    - if: osx
-      then: libintl-devel
     - make
     - pkg-config
   host:
+    - if: osx
+      then: libintl-devel
     - ncurses
 
 tests:

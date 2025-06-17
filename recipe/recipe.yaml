@@ -23,7 +23,9 @@ requirements:
   build:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
+    - gettext
     - make
+    - pkg-config
   host:
     - if: osx
       then: libintl-devel

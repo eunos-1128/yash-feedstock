@@ -1,6 +1,6 @@
 context:
   name: Yash
-  version: "2.59"
+  version: "2.60"
   author: magicant
 
 package:
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://github.com/${{ author }}/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
-  sha256: efe9d299a14d103d259b8a709fa2b664d8ff6ee498523f797f31f67db62e11af
+  sha256: 15574a494fde1f90d95c1c659bf834c2d91ea4948dcfd055cac89c70ec5568f5
 
 build:
-  number: 1
+  number: 0
   skip:
     - win
 

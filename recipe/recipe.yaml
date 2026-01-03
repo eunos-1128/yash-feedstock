@@ -12,15 +12,18 @@ source:
   sha256: 15574a494fde1f90d95c1c659bf834c2d91ea4948dcfd055cac89c70ec5568f5
 
 build:
-  number: 0
+  number: 1
   skip:
     - win
 
 requirements:
   build:
-    - ${{ compiler('c') }}
-    - ${{ stdlib('c') }}
+    - ${{ compiler("c") }}
+    - ${{ stdlib("c") }}
+    - asciidoc
+    - docbook-xsl
     - gettext
+    - libxslt
     - make
     - pkg-config
   host:
@@ -28,6 +31,8 @@ requirements:
       then: gettext
     - if: osx
       then: libintl-devel
+    - if: osx and arm64
+      then: libiconv
     - ncurses
 
 tests:
@@ -36,6 +41,8 @@ tests:
 
 about:
   homepage: https://magicant.github.io/yash
+  repository: https://github.com/magicant/yash
+  documentation: https://magicant.github.io/yash/doc
   license: GPL-2.0-or-later
   license_family: GPL
   license_file: COPYING
@@ -52,8 +59,6 @@ about:
       - Prompt command and command-not-found handler
       - Command line completion with predefined completion scripts for more than 100 commands
       - Command line prediction based on command history
-  repository: https://github.com/magicant/yash
-  documentation: https://magicant.github.io/yash/doc
 
 extra:
   recipe-maintainers:

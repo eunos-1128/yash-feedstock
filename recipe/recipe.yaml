@@ -1,6 +1,6 @@
 context:
   name: Yash
-  version: "2.60"
+  version: "2.61"
   author: magicant
 
 package:
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://github.com/${{ author }}/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 15574a494fde1f90d95c1c659bf834c2d91ea4948dcfd055cac89c70ec5568f5
+  sha256: 06401f8abfad7ac3bdbce66ccda2c37878fa103a53a3c3ed35e386f2514dd9bd
 
 build:
-  number: 1
+  number: 0
   skip:
     - win
 
@@ -30,9 +30,10 @@ requirements:
     - if: linux
       then: gettext
     - if: osx
-      then: libintl-devel
-    - if: osx and arm64
-      then: libiconv
+      then:
+        - libintl-devel
+        - if: arm64
+          then: libiconv
     - ncurses
 
 tests:
